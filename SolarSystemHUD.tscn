@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends MarginContainer
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+var resources = 0
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
+
+func _on_Ship_mining():
+	resources += 1
+	$HBoxContainer/ResourcesValueLabel.text = str(resources)
+"
+
+[node name="SolarSystemHUD" type="MarginContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = SubResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 82.0
+margin_bottom = 40.0
+
+[node name="ResourcesLabel" type="Label" parent="HBoxContainer"]
+margin_top = 13.0
+margin_right = 70.0
+margin_bottom = 27.0
+text = "Resources:"
+
+[node name="ResourcesValueLabel" type="Label" parent="HBoxContainer"]
+margin_left = 74.0
+margin_top = 13.0
+margin_right = 82.0
+margin_bottom = 27.0
+text = "0"

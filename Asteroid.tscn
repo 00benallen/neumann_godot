@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Asteroid.gd" type="Script" id=1]
+[ext_resource path="res://sprites/Basic Asteroid.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 20.3111
+
+[node name="Asteroid" type="RigidBody2D"]
+mode = 3
+gravity_scale = 0.0
+contacts_reported = 1
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -18.3517
+margin_top = -20.7045
+margin_right = 21.6483
+margin_bottom = 19.2955
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.188217, -0.188225 )
+shape = SubResource( 1 )

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://HUDLayer.gd" type="Script" id=1]
+[ext_resource path="res://SolarSystemHUD.tscn" type="PackedScene" id=2]
+
+[node name="HUDLayer" type="CanvasLayer"]
+layer = -1
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 0.749023
+margin_top = 1.73639
+margin_right = 1020.75
+margin_bottom = 599.736
+color = Color( 0, 0, 0, 1 )
+
+[node name="SolarSystemHUD" parent="ColorRect" instance=ExtResource( 2 )]
+anchor_right = 1.0
+margin_right = 82.0
+margin_bottom = 14.0
+script = null
